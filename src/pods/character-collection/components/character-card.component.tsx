@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,46 +9,50 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { HotelEntityVm } from '../hotel-collection.vm';
-import * as classes from './hotel-card.styles';
+import { CharacterVm } from '../character-collection.vm';
+import * as classes from './character-card.styles';
 
 interface Props {
-  hotel: HotelEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  character: CharacterVm;
+  // onEdit: (id: string) => void;
 }
 
-export const HotelCard: React.FunctionComponent<Props> = (props) => {
-  const { hotel, onEdit, onDelete } = props;
+export const CharacterCard: React.FunctionComponent<Props> = (props) => {
+  const {
+    character,
+    // , onEdit
+  } = props;
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate(`/characters/${character.id}`);
+  };
 
   return (
-    <Card>
+    <Card onClick={handleNavigate} className={classes.card}>
       <CardHeader
-        avatar={<Avatar aria-label="Hotel">{hotel.rating}</Avatar>}
-        title={hotel.name}
-        subheader={hotel.address}
+        avatar={<Avatar aria-label="Character">{character.image}</Avatar>}
+        title={character.name}
+        subheader={character.origin.name}
       />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
-            image={hotel.picture}
-            title={hotel.name}
+            image={character.image}
+            title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {hotel.description}
+            {character.status}
           </Typography>
         </div>
       </CardContent>
-      <CardActions>
-        <IconButton onClick={() => onEdit(hotel.id)}>
+      {/* <CardActions>
+        <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
         </IconButton>
-        <IconButton onClick={() => onDelete(hotel.id)}>
-          <DeleteIcon />
-        </IconButton>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };
