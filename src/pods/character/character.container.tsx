@@ -25,7 +25,6 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   React.useEffect(() => {
     handleLoadCharacter(id);
   }, []);
-  console.log(character);
   // const handleSave = async (character: Character) => {
   //   const apiCharacter = mapCharacterFromVmToApi(character);
   //   const success = await api.saveCharacter(apiCharacter);

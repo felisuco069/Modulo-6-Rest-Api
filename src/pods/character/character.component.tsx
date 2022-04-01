@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { CharacterDetail } from './character-card.detail';
 
 interface Props {
   character: Character;
@@ -25,29 +26,28 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image={character.image}
-          title={character.name}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {character.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
+      <CardMedia
+        component="img"
+        alt="Contemplative Reptile"
+        height="300"
+        image={character.image}
+        title={character.name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {character.name}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          Character Detail:
+        </Typography>
+      </CardContent>
+
+      <CharacterDetail character={character} />
+      {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };
