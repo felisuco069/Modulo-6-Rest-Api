@@ -6,13 +6,23 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import { Character } from './character.vm';
 import * as classes from './character.styles';
+import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import { MyContext } from 'core/context/myContext';
 
 interface Props {
   character: Character;
+  onSave: (quote: string) => void;
 }
 
 export const CharacterDetail = (props: Props) => {
-  const { character } = props;
+  const { character, onSave } = props;
+
+  const { isMockApi } = React.useContext(MyContext);
+
+  const [quote, setQuote] = React.useState<string>('');
   return (
     <Grid container spacing={1}>
       <List>
@@ -64,6 +74,56 @@ export const CharacterDetail = (props: Props) => {
             className={classes.itemState}
           />
         </ListItem>
+        {!isMockApi ? (
+          <div>
+            <ListItem className={classes.rowItem}>
+              <ListItemText
+                secondary="BestSentences: "
+                className={classes.item}
+              />
+            </ListItem>
+            {character.bestSentences.length > 0 ? (
+              character.bestSentences.map((sentence) => (
+                <ListItem className={classes.rowItem}>
+                  <ListItemText
+                    secondary={sentence}
+                    className={classes.itemState}
+                  />
+                </ListItem>
+              ))
+            ) : (
+              <ListItem className={classes.rowItem}>
+                <ListItemText
+                  secondary="Unknown"
+                  className={classes.itemState}
+                />
+              </ListItem>
+            )}
+
+            <TextareaAutosize
+              maxRows={4}
+              aria-label="maximum height"
+              placeholder="Write your best sentences"
+              defaultValue={quote}
+              style={{ height: '8rem' }}
+              className={classes.input}
+              onChange={(e) => setQuote(e.target.value)}
+            />
+            <CardActions>
+              <Button
+                size="small"
+                color="primary"
+                onClick={() => {
+                  console.log('quote ', quote);
+                  console.log('character ', character);
+                  onSave(quote);
+                }}
+              >
+                Add Quote
+              </Button>
+            </CardActions>
+          </div>
+        ) : null}
       </List>
     </Grid>
   );

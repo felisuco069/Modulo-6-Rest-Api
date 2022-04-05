@@ -9,10 +9,12 @@ export const useCharacterCollection = () => {
     CharacterVm[]
   >([]);
 
-  const loadCharacterCollection = () => {
-    getCharacterCollection().then((result: any[]) => {
+  const loadCharacterCollection = (isMockApi: boolean) => {
+    getCharacterCollection(isMockApi).then((result: any[]) => {
+      console.log(result);
       setCharacterCollection(mapToCollection(result, mapFromApiToVm));
     });
   };
+  console.log(characterCollection);
   return { characterCollection, loadCharacterCollection };
 };

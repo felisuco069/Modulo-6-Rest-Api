@@ -8,7 +8,7 @@
   "results": [
     {
       "id": 1,
-      "name": "Rick Franco",
+      "name": "Rick Sanchez",
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -86,10 +86,7 @@
       "species": "Human",
       "type": "",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Citadel of Ricks",
         "url": "https://rickandmortyapi.com/api/location/3"
@@ -393,10 +390,7 @@
       "species": "Human",
       "type": "",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Citadel of Ricks",
         "url": "https://rickandmortyapi.com/api/location/3"
@@ -435,10 +429,7 @@
       "species": "Human",
       "type": "Superhuman (Ghost trains summoner)",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Worldender's lair",
         "url": "https://rickandmortyapi.com/api/location/4"
@@ -498,10 +489,7 @@
       "species": "Alien",
       "type": "",
       "gender": "unknown",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Earth (Replacement Dimension)",
         "url": "https://rickandmortyapi.com/api/location/20"
@@ -519,10 +507,7 @@
       "species": "Alien",
       "type": "",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Citadel of Ricks",
         "url": "https://rickandmortyapi.com/api/location/3"
@@ -540,10 +525,7 @@
       "species": "Alien",
       "type": "",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Citadel of Ricks",
         "url": "https://rickandmortyapi.com/api/location/3"
@@ -561,10 +543,7 @@
       "species": "Alien",
       "type": "Parasite",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Earth (Replacement Dimension)",
         "url": "https://rickandmortyapi.com/api/location/20"
@@ -603,10 +582,7 @@
       "species": "Human",
       "type": "Human with antennae",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Citadel of Ricks",
         "url": "https://rickandmortyapi.com/api/location/3"
@@ -627,14 +603,8 @@
       "species": "Human",
       "type": "Human with antennae",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
-      "location": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
+      "location": { "name": "unknown", "url": "" },
       "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
       "episode": ["https://rickandmortyapi.com/api/episode/10"],
       "url": "https://rickandmortyapi.com/api/character/19",
@@ -648,10 +618,7 @@
       "species": "Human",
       "type": "Human with ants in his eyes",
       "gender": "Male",
-      "origin": {
-        "name": "unknown",
-        "url": ""
-      },
+      "origin": { "name": "unknown", "url": "" },
       "location": {
         "name": "Interdimensional Cable",
         "url": "https://rickandmortyapi.com/api/location/6"

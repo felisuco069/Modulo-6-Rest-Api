@@ -12,20 +12,42 @@ export interface Character {
     name: string;
   };
   image: string;
+  bestSentences?: string[];
 }
 
-export const createEmptyCharacter = (): Character => ({
-  id: '',
-  name: '',
-  status: '',
-  species: '',
-  type: '',
-  gender: '',
-  origin: {
-    name: '',
-  },
-  location: {
-    name: '',
-  },
-  image: '',
-});
+export const createEmptyCharacter = (isMockApi: boolean): Character => {
+  if (isMockApi) {
+    return {
+      id: '',
+      name: '',
+      status: '',
+      species: '',
+      type: '',
+      gender: '',
+      origin: {
+        name: '',
+      },
+      location: {
+        name: '',
+      },
+      image: '',
+    };
+  } else {
+    return {
+      id: '',
+      name: '',
+      status: '',
+      species: '',
+      type: '',
+      gender: '',
+      origin: {
+        name: '',
+      },
+      location: {
+        name: '',
+      },
+      image: '',
+      bestSentences: [],
+    };
+  }
+};

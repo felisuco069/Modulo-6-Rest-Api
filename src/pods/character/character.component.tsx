@@ -11,43 +11,38 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { CharacterDetail } from './character-card.detail';
+import { MyContext } from 'core/context/myContext';
 
 interface Props {
   character: Character;
-  //   cities: Lookup[];
-  //   onSave: (character: Character) => void;
+  onSave: (quote: string) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const {
-    character,
-    //  onSave
-  } = props;
+  const { character, onSave } = props;
 
   return (
     <Card className={classes.root}>
       <CardMedia
         component="img"
         alt="Contemplative Reptile"
-        height="300"
+        height="600"
         image={character.image}
         title={character.name}
+        className={classes.cardMedia}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {character.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Character Detail:
-        </Typography>
-      </CardContent>
+      <div className={classes.datasContainer}>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {character.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Character Detail:
+          </Typography>
+        </CardContent>
 
-      <CharacterDetail character={character} />
-      {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions> */}
+        <CharacterDetail character={character} onSave={onSave} />
+      </div>
     </Card>
   );
 };

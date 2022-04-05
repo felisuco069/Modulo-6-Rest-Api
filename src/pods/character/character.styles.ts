@@ -2,9 +2,14 @@ import { css } from 'emotion';
 
 export const root = css`
   display: flex;
+`;
+export const cardMedia = css`
+  width: auto;
+`;
+
+export const datasContainer = css`
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 20rem;
 `;
 
 export const rowItem = css`
@@ -25,4 +30,8 @@ export const itemState = css`
     font-weight: bold;
     font-size: 1.1rem;
   }
+`;
+export const input = css`
+  margin-left: 1rem;
+  width: 20rem;
 `;
