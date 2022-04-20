@@ -11,10 +11,8 @@ export const useCharacterCollection = () => {
 
   const loadCharacterCollection = (isMockApi: boolean) => {
     getCharacterCollection(isMockApi).then((result: any[]) => {
-      console.log(result);
       setCharacterCollection(mapToCollection(result, mapFromApiToVm));
     });
   };
-  console.log(characterCollection);
   return { characterCollection, loadCharacterCollection };
 };

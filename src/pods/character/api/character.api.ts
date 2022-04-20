@@ -1,5 +1,4 @@
 import { Character } from './character.api-model';
-import { Lookup } from 'common/models';
 import Axios from 'axios';
 
 const url = 'https://rickandmortyapi.com/api/character';

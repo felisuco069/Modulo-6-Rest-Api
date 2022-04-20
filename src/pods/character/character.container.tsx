@@ -6,7 +6,6 @@ import {
   mapCharacterFromApiToVm,
   mapCharacterFromVmToApi,
 } from './character.mappers';
-import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
 import { MyContext } from 'core/context/myContext';
 
@@ -31,7 +30,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   React.useEffect(() => {
     handleLoadCharacter(id, isMockApi);
   }, [isMockApi]);
-  console.log(character);
+
   const handleSave = (quote: string) => {
     const apiCharacter = mapCharacterFromVmToApi(characterVmToApi, quote);
     const success = api.saveCharacter(apiCharacter, id);
